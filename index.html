@@ -1,11 +1,15 @@
 <script>
-const params = new URLSearchParams(window.location.search);
-const yclid = params.get('yclid');
+    const params = new URLSearchParams(window.location.search);
+    const yclid = params.get('yclid');
+    
+    // Ссылка на подписную 
+    let nextStep = "https://vk.com/app5898182_-238466170";
 
-if (yclid) {
-  localStorage.setItem('yclid', yclid);
-  document.body.innerHTML = "YCLID saved: " + yclid;
-} else {
-  document.body.innerHTML = "No yclid in URL";
-}
+    if (yclid) {
+        // Приклеиваем yclid, чтобы Senler его увидел
+        nextStep += "#utm_content=" + yclid;
+    }
+
+    // Редирект
+    window.location.href = nextStep;
 </script>
