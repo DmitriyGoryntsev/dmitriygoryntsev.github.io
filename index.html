@@ -1,15 +1,14 @@
-<script>
-    const params = new URLSearchParams(window.location.search);
-    const yclid = params.get('yclid');
-    
-    // Ссылка на подписную 
-    let nextStep = "https://vk.com/app5898182_-238466170";
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const myCid = params.get('cid'); // Берем твой ID из ссылки
 
-    if (yclid) {
-        // Приклеиваем yclid, чтобы Senler его увидел
-        nextStep += "#utm_content=" + yclid;
-    }
+        // Твоя ссылка в Senler + хвост для передачи ID
+        let url = "https://vk.com/app5898182_-238466170#utm_content=" + myCid;
 
-    // Редирект
-    window.location.href = nextStep;
-</script>
+        window.location.href = url;
+    </script>
+</body>
+</html>
