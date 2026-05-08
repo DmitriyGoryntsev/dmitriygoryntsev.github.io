@@ -1,26 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Redirect</title>
-</head>
-<body>
-
 <script>
 const params = new URLSearchParams(window.location.search);
 const yclid = params.get('yclid');
 
 if (yclid) {
   localStorage.setItem('yclid', yclid);
-  console.log("YCLID saved:", yclid);
+  document.body.innerHTML = "YCLID saved: " + yclid;
+} else {
+  document.body.innerHTML = "No yclid in URL";
 }
-
-// редирект в Senler 
-window.location.href = "https://vk.com/club238466170?w=app5898182_-238466170";
-
 </script>
-
-Перенаправляем...
-
-</body>
-</html>
